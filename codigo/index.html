@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Barbearia Vintage</title>
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="success_styles.css?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- 
+        Este container seria o elemento "Embed" na ferramenta No-Code.
+        Todo o CSS necessário está encapsulado ou usa classes específicas para evitar conflitos.
+    -->
+    <div class="barbershop-widget">
+        <header class="widget-header">
+            <h2>Agende seu Corte</h2>
+            <p>Estilo clássico para o homem moderno.</p>
+        </header>
+
+        <form id="bookingForm" class="booking-form" novalidate>
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="name" placeholder="Ex: João Silva" required aria-required="true">
+                <span class="error-message" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required aria-required="true">
+                <span class="error-message" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Serviço</label>
+                <select id="service" name="service" required aria-required="true">
+                    <option value="">Selecione um serviço...</option>
+                    <option value="corte">Corte Clássico - R$ 45,00</option>
+                    <option value="barba">Barba Tradicional - R$ 35,00</option>
+                    <option value="completo">Combo (Cabelo + Barba) - R$ 70,00</option>
+                </select>
+                <span class="error-message" id="serviceError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Data Preferencial</label>
+                <input type="date" id="date" name="date" required aria-required="true">
+                <span class="error-message" id="dateError"></span>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Confirmar Agendamento</span>
+                <span class="loader" style="display: none;"></span>
+            </button>
+
+            <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+        </form>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999"
+                        stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M22 4L12 14.01L9 11.01" stroke="#27ae60" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h3>Agendamento Confirmado!</h3>
+            <p>Obrigado, <span id="successName"></span>.</p>
+            <p>Seu horário para <strong><span id="successService"></span></strong> em <span id="successDate"></span> foi
+                reservado.</p>
+            <button id="newBookingBtn" class="submit-btn" style="margin-top: 1rem;">Fazer Novo Agendamento</button>
+        </div>
+    </div>
+
+    <script src="script_v3.js"></script>
+</body>
+
+</html>
