@@ -42,4 +42,4 @@ Copie o conteúdo de `script.js` e cole dentro de tags `<script> ... </script>`:
 3. **Conflito de IDs:** Se houver outro formulário na página com o mesmo ID `bookingForm`, o código pode quebrar. Garanta que os IDs sejam únicos.
 
 ---
-**Autor:** [Seu Nome]
+**Autor:** [Victor Curcio]
